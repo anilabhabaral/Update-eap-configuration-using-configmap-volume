@@ -43,7 +43,7 @@ $JBOSS_HOME/bin/jboss-cli.sh --file=$JBOSS_HOME/extensions/extensions.cli
 ```
 $ oc create configmap jboss-cli --from-file=postconfigure.sh=extensions/postconfigure.sh --from-file=extensions.cli=extensions/extensions.cli
 ```
-5. Add the ConfigMap to your DeploymentConfig
+5. Add the ConfigMap to your Deployment
 ```
 $ oc set volume deployment $DEPLOYMENT_NAME --add --name=jboss-cli -m /opt/eap/extensions -t configmap --configmap-name=jboss-cli --default-mode='0755'
 ```
