@@ -18,6 +18,8 @@ oc create cm standalone --from-file=standalone-openshift.xml
 oc set volume dc $DC_NAME --add --name=standalone --mount-path=/opt/eap/standalone/configuration/standalone-openshift.xml --sub-path=standalone-openshift.xml --type=configmap --configmap-name=standalone
 ```
 
+Note: If you are using deployment instead of DeploymentConfig then replace `dc` with `deployment` in the above commands.
+
 # By using CLI script
 
 1. Create a CLI script(.cli) file with the required CLI commands. For example:
